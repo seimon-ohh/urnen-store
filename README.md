@@ -184,6 +184,7 @@ yarn
 # Spin up the database and Redis
 docker-compose up -d
 
+
 # Build the project
 yarn build
 

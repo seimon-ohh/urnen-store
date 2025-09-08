@@ -6,6 +6,8 @@ import { LocalizedLink } from "@/components/LocalizedLink"
 import { HeaderDrawer } from "@/components/HeaderDrawer"
 import { RegionSwitcher } from "@/components/RegionSwitcher"
 import { HeaderWrapper } from "@/components/HeaderWrapper"
+import { HeaderClient } from "@/components/HeaderClient"
+import { HeaderDrawerClient } from "@/components/HeaderDrawerClient"
 
 import dynamic from "next/dynamic"
 
@@ -31,6 +33,7 @@ export const Header: React.FC = async () => {
       }))
     })
     .flat()
+    .filter((option) => option.country === 'de' || option.country === 'gb')
     .sort((a, b) => (a?.label ?? "").localeCompare(b?.label ?? ""))
 
   return (
@@ -39,14 +42,7 @@ export const Header: React.FC = async () => {
         <Layout>
           <LayoutColumn>
             <div className="flex justify-between items-center h-18 md:h-21">
-              <h1 className="font-medium text-md">
-                <LocalizedLink href="/">SofaSocietyCo.</LocalizedLink>
-              </h1>
-              <div className="flex items-center gap-8 max-md:hidden">
-                <LocalizedLink href="/about">About</LocalizedLink>
-                <LocalizedLink href="/inspiration">Inspiration</LocalizedLink>
-                <LocalizedLink href="/store">Shop</LocalizedLink>
-              </div>
+              <HeaderClient countryOptions={countryOptions} />
               <div className="flex items-center gap-3 lg:gap-6 max-md:hidden">
                 <RegionSwitcher
                   countryOptions={countryOptions}
@@ -57,14 +53,14 @@ export const Header: React.FC = async () => {
                 <React.Suspense>
                   <SearchField countryOptions={countryOptions} />
                 </React.Suspense>
-                <LoginLink className="p-1 group-data-[light=true]:md:text-white group-data-[sticky=true]:md:text-black" />
+                <LoginLink className="p-1 group-data-[light=true]:md:text-black group-data-[sticky=true]:md:text-black" />
                 <CartDrawer />
               </div>
               <div className="flex items-center gap-4 md:hidden">
-                <LoginLink className="p-1 group-data-[light=true]:md:text-white" />
+                <LoginLink className="p-1 group-data-[light=true]:md:text-black" />
                 <CartDrawer />
                 <React.Suspense>
-                  <HeaderDrawer countryOptions={countryOptions} />
+                  <HeaderDrawerClient countryOptions={countryOptions} />
                 </React.Suspense>
               </div>
             </div>

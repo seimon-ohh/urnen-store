@@ -1,6 +1,7 @@
 "use client"
 
 import * as React from "react"
+import { useParams } from "next/navigation"
 import { SubmitButton } from "@modules/common/components/submit-button"
 import { Form, InputField } from "@/components/Forms"
 import { LocalizedLink } from "@/components/LocalizedLink"
@@ -10,6 +11,7 @@ import { useLogin } from "hooks/customer"
 import { withReactQueryProvider } from "@lib/util/react-query"
 import { useRouter } from "next/navigation"
 import { emailFormSchema } from "@modules/checkout/components/email"
+import { getTranslation } from "@lib/translations"
 
 const loginFormSchema = z.object({
   email: z.string().email(),
@@ -21,6 +23,8 @@ export const LoginForm = withReactQueryProvider<{
   redirectUrl?: string
   handleCheckout?: (values: z.infer<typeof emailFormSchema>) => void
 }>(({ className, redirectUrl, handleCheckout }) => {
+  const { countryCode } = useParams()
+  const lang = countryCode as string || 'en'
   const { isPending, data, mutate } = useLogin()
 
   const router = useRouter()
@@ -43,13 +47,13 @@ export const LoginForm = withReactQueryProvider<{
     <Form onSubmit={onSubmit} schema={loginFormSchema}>
       <div className={twMerge("flex flex-col gap-6 md:gap-8", className)}>
         <InputField
-          placeholder="Email"
+          placeholder={getTranslation(lang, 'loginEmailPlaceholder')}
           name="email"
           inputProps={{ autoComplete: "email" }}
           className="flex-1"
         />
         <InputField
-          placeholder="Password"
+          placeholder={getTranslation(lang, 'loginPasswordPlaceholder')}
           name="password"
           type="password"
           className="flex-1"
@@ -60,12 +64,12 @@ export const LoginForm = withReactQueryProvider<{
           variant="underline"
           className="self-start !pb-0 text-grayscale-500 leading-none"
         >
-          Forgot password?
+          {getTranslation(lang, 'loginForgotPassword')}
         </LocalizedLink>
         {!data?.success && (
           <p className="text-red-primary text-sm">{data?.message}</p>
         )}
-        <SubmitButton isLoading={isPending}>Log in</SubmitButton>
+        <SubmitButton isLoading={isPending}>{getTranslation(lang, 'loginButton')}</SubmitButton>
       </div>
     </Form>
   )
