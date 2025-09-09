@@ -49,7 +49,7 @@ export const HomePageClient: React.FC<HomePageClientProps> = ({ countryCode }) =
               {getTranslation(lang, 'aboutSectionTitle')}
             </h3>
             <Image
-              src="/images/content/urne-2.JPG"
+              src="/images/content/DSCF3621.JPG"
               width={2496}
               height={1400}
               alt={getTranslation(lang, 'aboutImageAlt')}
