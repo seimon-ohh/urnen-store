@@ -16,7 +16,7 @@ export const AboutPageClient: React.FC<AboutPageClientProps> = ({ countryCode })
     <>
       <div className="max-md:pt-18">
         <Image
-          src="/images/content/2.JPG"
+          src="/images/content/2.jpg"
           width={2880}
           height={1500}
           alt={getTranslation(lang, 'aboutImageAlt')}
