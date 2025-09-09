@@ -4,7 +4,7 @@ import { NextRequest, NextResponse } from "next/server"
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL
 const PUBLISHABLE_API_KEY = process.env.NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY
-const DEFAULT_REGION = process.env.NEXT_PUBLIC_DEFAULT_REGION || "us"
+const DEFAULT_REGION = process.env.NEXT_PUBLIC_DEFAULT_REGION || "de"
 
 const regionMapCache = {
   regionMap: new Map<string, HttpTypes.StoreRegion>(),
@@ -18,30 +18,83 @@ async function getRegionMap() {
     !regionMap.keys().next().value ||
     regionMapUpdated < Date.now() - 3600 * 1000
   ) {
-    console.log({ PUBLISHABLE_API_KEY })
-    // Fetch regions from Medusa. We can't use the JS client here because middleware is running on Edge and the client needs a Node environment.
-    const { regions } = await fetch(`${BACKEND_URL}/store/regions`, {
-      headers: {
-        "x-publishable-api-key": PUBLISHABLE_API_KEY!,
-      },
-      next: {
-        revalidate: 3600,
-        tags: ["regions"],
-      },
-    }).then((res) => res.json())
+    // Check if we should use fallback data (build time or localhost backend)
+    const isLocalhost = BACKEND_URL?.includes("localhost") || BACKEND_URL?.includes("127.0.0.1")
+    const isVercelBuild = process.env.VERCEL === "1" && process.env.NODE_ENV === "production"
+    
+    if (isLocalhost || isVercelBuild || !BACKEND_URL || !PUBLISHABLE_API_KEY) {
+      console.log("Using fallback regions data in middleware for build/localhost environment")
+      // Use fallback regions data
+      const fallbackRegions = [
+        {
+          id: "reg_01",
+          name: "Europe",
+          countries: [
+            { id: "ctr_01", iso_2: "de", iso_3: "deu", num_code: "276", name: "Germany", display_name: "Germany" },
+            { id: "ctr_02", iso_2: "gb", iso_3: "gbr", num_code: "826", name: "United Kingdom", display_name: "United Kingdom" }
+          ]
+        }
+      ] as HttpTypes.StoreRegion[]
 
-    if (!regions?.length) {
-      notFound()
+      // Create a map of country codes to regions.
+      fallbackRegions.forEach((region: HttpTypes.StoreRegion) => {
+        region.countries?.forEach((c) => {
+          regionMapCache.regionMap.set(c.iso_2 ?? "", region)
+        })
+      })
+
+      regionMapCache.regionMapUpdated = Date.now()
+      return regionMapCache.regionMap
     }
 
-    // Create a map of country codes to regions.
-    regions.forEach((region: HttpTypes.StoreRegion) => {
-      region.countries?.forEach((c) => {
-        regionMapCache.regionMap.set(c.iso_2 ?? "", region)
-      })
-    })
+    try {
+      console.log({ PUBLISHABLE_API_KEY })
+      // Fetch regions from Medusa. We can't use the JS client here because middleware is running on Edge and the client needs a Node environment.
+      const { regions } = await fetch(`${BACKEND_URL}/store/regions`, {
+        headers: {
+          "x-publishable-api-key": PUBLISHABLE_API_KEY!,
+        },
+        next: {
+          revalidate: 3600,
+          tags: ["regions"],
+        },
+      }).then((res) => res.json())
 
-    regionMapCache.regionMapUpdated = Date.now()
+      if (!regions?.length) {
+        notFound()
+      }
+
+      // Create a map of country codes to regions.
+      regions.forEach((region: HttpTypes.StoreRegion) => {
+        region.countries?.forEach((c) => {
+          regionMapCache.regionMap.set(c.iso_2 ?? "", region)
+        })
+      })
+
+      regionMapCache.regionMapUpdated = Date.now()
+    } catch (error) {
+      console.warn("Failed to fetch regions in middleware, using fallback:", error)
+      // Use fallback regions data on error
+      const fallbackRegions = [
+        {
+          id: "reg_01",
+          name: "Europe",
+          countries: [
+            { id: "ctr_01", iso_2: "de", iso_3: "deu", num_code: "276", name: "Germany", display_name: "Germany" },
+            { id: "ctr_02", iso_2: "gb", iso_3: "gbr", num_code: "826", name: "United Kingdom", display_name: "United Kingdom" }
+          ]
+        }
+      ] as HttpTypes.StoreRegion[]
+
+      // Create a map of country codes to regions.
+      fallbackRegions.forEach((region: HttpTypes.StoreRegion) => {
+        region.countries?.forEach((c) => {
+          regionMapCache.regionMap.set(c.iso_2 ?? "", region)
+        })
+      })
+
+      regionMapCache.regionMapUpdated = Date.now()
+    }
   }
 
   return regionMapCache.regionMap
