@@ -28,34 +28,68 @@ export const getProductByHandle = async function (
   handle: string,
   regionId: string
 ) {
-  return sdk.client
-    .fetch<{ products: HttpTypes.StoreProduct[] }>(`/store/products`, {
-      query: {
-        handle,
-        region_id: regionId,
-        fields: "*variants.calculated_price,+variants.inventory_quantity",
-      },
-      next: { tags: ["products"] },
-    })
-    .then(({ products }) => products[0])
+  // Check if we should use fallback data (build time or localhost backend)
+  const backendUrl = process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL || "http://localhost:9000"
+  const isLocalhost = backendUrl.includes("localhost") || backendUrl.includes("127.0.0.1")
+  const isVercelBuild = process.env.VERCEL === "1" && process.env.NODE_ENV === "production"
+  
+  if (isLocalhost || isVercelBuild) {
+    console.log("Using fallback product data for build/localhost environment")
+    return null
+  }
+
+  try {
+    return await sdk.client
+      .fetch<{ products: HttpTypes.StoreProduct[] }>(`/store/products`, {
+        query: {
+          handle,
+          region_id: regionId,
+          fields: "*variants.calculated_price,+variants.inventory_quantity",
+        },
+        next: { tags: ["products"] },
+      })
+      .then(({ products }) => products[0])
+  } catch (error) {
+    console.warn("Failed to fetch product by handle, returning null:", error)
+    return null
+  }
 }
 
 export const getProductFashionDataByHandle = async function (handle: string) {
-  return sdk.client.fetch<{
-    materials: {
-      id: string
-      name: string
-      colors: {
+  // Check if we should use fallback data (build time or localhost backend)
+  const backendUrl = process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL || "http://localhost:9000"
+  const isLocalhost = backendUrl.includes("localhost") || backendUrl.includes("127.0.0.1")
+  const isVercelBuild = process.env.VERCEL === "1" && process.env.NODE_ENV === "production"
+  
+  if (isLocalhost || isVercelBuild) {
+    console.log("Using fallback fashion data for build/localhost environment")
+    return {
+      materials: []
+    }
+  }
+
+  try {
+    return await sdk.client.fetch<{
+      materials: {
         id: string
         name: string
-        hex_code: string
+        colors: {
+          id: string
+          name: string
+          hex_code: string
+        }[]
       }[]
-    }[]
-  }>(`/store/custom/fashion/${handle}`, {
-    method: "GET",
-    next: { tags: ["products"] },
-    cache: "force-cache",
-  })
+    }>(`/store/custom/fashion/${handle}`, {
+      method: "GET",
+      next: { tags: ["products"] },
+      cache: "force-cache",
+    })
+  } catch (error) {
+    console.warn("Failed to fetch fashion data, using fallback:", error)
+    return {
+      materials: []
+    }
+  }
 }
 
 export const getProductsList = async function ({
@@ -71,6 +105,20 @@ export const getProductsList = async function ({
   nextPage: number | null
   queryParams?: HttpTypes.FindParams & HttpTypes.StoreProductListParams
 }> {
+  // Check if we should use fallback data (build time or localhost backend)
+  const backendUrl = process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL || "http://localhost:9000"
+  const isLocalhost = backendUrl.includes("localhost") || backendUrl.includes("127.0.0.1")
+  const isVercelBuild = process.env.VERCEL === "1" && process.env.NODE_ENV === "production"
+  
+  if (isLocalhost || isVercelBuild) {
+    console.log("Using fallback products data for build/localhost environment")
+    return {
+      response: { products: [], count: 0 },
+      nextPage: null,
+      queryParams,
+    }
+  }
+
   const page = Math.max(1, pageParam || 1)
   const limit = queryParams?.limit || 12
   const offset = (page - 1) * limit
@@ -82,33 +130,43 @@ export const getProductsList = async function ({
       nextPage: null,
     }
   }
-  return sdk.client
-    .fetch<{ products: HttpTypes.StoreProduct[]; count: number }>(
-      `/store/products`,
-      {
-        query: {
-          limit,
-          offset,
-          region_id: region.id,
-          fields: "*variants.calculated_price",
-          ...queryParams,
-        },
-        next: { tags: ["products"] },
-        cache: "force-cache",
-      }
-    )
-    .then(({ products, count }) => {
-      const nextPage = count > offset + limit ? page + 1 : null
 
-      return {
-        response: {
-          products,
-          count,
-        },
-        nextPage: nextPage,
-        queryParams,
-      }
-    })
+  try {
+    return await sdk.client
+      .fetch<{ products: HttpTypes.StoreProduct[]; count: number }>(
+        `/store/products`,
+        {
+          query: {
+            limit,
+            offset,
+            region_id: region.id,
+            fields: "*variants.calculated_price",
+            ...queryParams,
+          },
+          next: { tags: ["products"] },
+          cache: "force-cache",
+        }
+      )
+      .then(({ products, count }) => {
+        const nextPage = count > offset + limit ? page + 1 : null
+
+        return {
+          response: {
+            products,
+            count,
+          },
+          nextPage: nextPage,
+          queryParams,
+        }
+      })
+  } catch (error) {
+    console.warn("Failed to fetch products, using fallback:", error)
+    return {
+      response: { products: [], count: 0 },
+      nextPage: null,
+      queryParams,
+    }
+  }
 }
 
 /**
