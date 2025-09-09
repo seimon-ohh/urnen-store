@@ -17,7 +17,7 @@ export const HomePageClient: React.FC<HomePageClientProps> = ({ countryCode }) =
     <>
       <div className="max-md:pt-18">
         <Image
-          src="/images/content/hero-urne.JPG"
+          src="/images/content/hero-urne.jpg"
           width={2880}
           height={1500}
           alt={getTranslation(lang, 'heroAlt')}

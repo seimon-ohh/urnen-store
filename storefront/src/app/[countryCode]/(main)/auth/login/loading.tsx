@@ -8,7 +8,7 @@ export default async function LoginLoadingPage() {
   return (
     <div className="flex min-h-screen">
       <Image
-        src="/images/content/gray-backrest-sofa-wooden-coffee-table.png"
+        src="/images/content/urne-3.JPG"
         width={1440}
         height={1632}
         alt="Gray backrest sofa and wooden coffee table"

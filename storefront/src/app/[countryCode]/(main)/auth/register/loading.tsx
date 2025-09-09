@@ -7,7 +7,7 @@ export default function RegisterLoadingPage() {
   return (
     <div className="flex min-h-screen">
       <Image
-        src="/images/content/living-room-dark-gray-corner-sofa-coffee-table.png"
+        src="/images/content/urne-2.JPG"
         width={1440}
         height={1632}
         alt="Living room with dark gray corner sofa and coffee table"

@@ -23,7 +23,7 @@ export const getProductTypesList = async function (
           deleted_at: null,
           metadata: {
             image: {
-              url: "/images/content/urn-1.jpg"
+              url: "/images/content/urne-1.JPG"
             }
           }
         }
@@ -60,7 +60,7 @@ export const getProductTypesList = async function (
           deleted_at: null,
           metadata: {
             image: {
-              url: "/images/content/urn-1.jpg"
+              url: "/images/content/urne-1.JPG"
             }
           }
         }
@@ -88,7 +88,7 @@ export const getProductTypeByHandle = async function (
       deleted_at: null,
       metadata: {
         image: {
-          url: "/images/content/urn-1.jpg"
+          url: "/images/content/urne-1.JPG"
         }
       }
     } as HttpTypes.StoreProductType
@@ -117,7 +117,7 @@ export const getProductTypeByHandle = async function (
       deleted_at: null,
       metadata: {
         image: {
-          url: "/images/content/urn-1.jpg"
+          url: "/images/content/urne-1.JPG"
         }
       }
     } as HttpTypes.StoreProductType
