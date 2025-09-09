@@ -184,5 +184,8 @@ export const translations = {
 export const getTranslation = (countryCode: string, key: string): string => {
   // Only DE gets German, all other countries get English
   const lang = countryCode === 'de' ? 'de' : 'en'
-  return translations[lang][key] || translations.en[key] || key
+  const langTranslations = translations[lang as keyof typeof translations]
+  const englishTranslations = translations.en
+  
+  return (langTranslations as any)[key] || (englishTranslations as any)[key] || key
 }
