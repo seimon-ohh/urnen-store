@@ -18,7 +18,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ countryOptions }) =>
   
   return (
     <>
-      <h1 className="font-medium text-md">
+      <h1 className="font-medium text-sm md:text-md">
         <LocalizedLink href="/">{getTranslation(countryCode || 'en', 'brandName')}</LocalizedLink>
       </h1>
       <div className="flex items-center gap-8 max-md:hidden">

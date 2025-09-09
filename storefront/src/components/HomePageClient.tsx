@@ -30,6 +30,9 @@ export const HomePageClient: React.FC<HomePageClientProps> = ({ countryCode }) =
             <h3 className="text-md max-md:mb-6 md:text-2xl">
               {getTranslation(lang, 'heroHeadline')}
             </h3>
+            <p className="text-sm md:text-md mt-4 max-w-2xl">
+              {getTranslation(lang, 'heroIntroText')}
+            </p>
           </LayoutColumn>
           <LayoutColumn start={{ base: 1, md: 9 }} end={13}>
             <div className="flex items-center h-full">
