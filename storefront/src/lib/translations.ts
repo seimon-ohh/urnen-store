@@ -187,5 +187,5 @@ export const getTranslation = (countryCode: string, key: string): string => {
   const langTranslations = translations[lang as keyof typeof translations]
   const englishTranslations = translations.en
   
-  return (langTranslations as any)[key] || (englishTranslations as any)[key] || key
+  return (langTranslations as Record<string, string>)[key] || (englishTranslations as Record<string, string>)[key] || key
 }
