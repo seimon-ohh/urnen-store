@@ -42,16 +42,16 @@ export const InspirationPageClient: React.FC<InspirationPageClientProps> = ({ co
                 src="/images/content/urne-4.JPG"
                 width={768}
                 height={572}
-                alt="Urn detail"
+                alt={getTranslation(lang, 'inspirationImageAlt2')}
                 className="mb-4 md:mb-6"
               />
               <div className="flex justify-between">
                 <div>
-                  <p className="mb-1">Studio detail</p>
-                  <p className="text-grayscale-500 text-xs">Material study</p>
+                  <p className="mb-1">{getTranslation(lang, 'inspirationStudioDetail')}</p>
+                  <p className="text-grayscale-500 text-xs">{getTranslation(lang, 'inspirationMaterialStudy')}</p>
                 </div>
                 <div>
-                  <p className="font-semibold">View</p>
+                  <p className="font-semibold">{getTranslation(lang, 'inspirationView')}</p>
                 </div>
               </div>
             </LocalizedLink>
@@ -61,7 +61,7 @@ export const InspirationPageClient: React.FC<InspirationPageClientProps> = ({ co
               src="/images/content/DSCF3614.JPG"
               width={2496}
               height={1404}
-              alt="Living room with brown armchair and gray corner sofa"
+              alt={getTranslation(lang, 'inspirationImageAlt3')}
               className="mt-26 md:mt-36 mb-8 md:mb-26"
             />
           </LayoutColumn>
@@ -84,16 +84,16 @@ export const InspirationPageClient: React.FC<InspirationPageClientProps> = ({ co
                 src="/images/content/urne-1.JPG"
                 width={768}
                 height={572}
-                alt="Urn silhouette"
+                alt={getTranslation(lang, 'inspirationImageAlt4')}
                 className="mb-4 md:mb-6"
               />
               <div className="flex justify-between">
                 <div>
-                  <p className="mb-1">Silhouette</p>
-                  <p className="text-grayscale-500 text-xs">Quiet form</p>
+                  <p className="mb-1">{getTranslation(lang, 'inspirationSilhouette')}</p>
+                  <p className="text-grayscale-500 text-xs">{getTranslation(lang, 'inspirationQuietForm')}</p>
                 </div>
                 <div>
-                  <p className="font-semibold">View</p>
+                  <p className="font-semibold">{getTranslation(lang, 'inspirationView')}</p>
                 </div>
               </div>
             </LocalizedLink>
@@ -102,16 +102,16 @@ export const InspirationPageClient: React.FC<InspirationPageClientProps> = ({ co
                 src="/images/content/urne-2.JPG"
                 width={768}
                 height={572}
-                alt="Urn close-up"
+                alt={getTranslation(lang, 'inspirationImageAlt5')}
                 className="mb-4 md:mb-6"
               />
               <div className="flex justify-between">
                 <div>
-                  <p className="mb-1">Close-up</p>
-                  <p className="text-grayscale-500 text-xs">Paper yarn</p>
+                  <p className="mb-1">{getTranslation(lang, 'inspirationCloseUp')}</p>
+                  <p className="text-grayscale-500 text-xs">{getTranslation(lang, 'inspirationPaperYarn')}</p>
                 </div>
                 <div>
-                  <p className="font-semibold">View</p>
+                  <p className="font-semibold">{getTranslation(lang, 'inspirationView')}</p>
                 </div>
               </div>
             </LocalizedLink>
@@ -121,19 +121,17 @@ export const InspirationPageClient: React.FC<InspirationPageClientProps> = ({ co
           src="/images/content/urne-3.JPG"
           width={2880}
           height={1618}
-          alt="Living room with gray two-seater puffy sofa"
+          alt={getTranslation(lang, 'inspirationImageAlt6')}
           className="md:h-screen md:object-cover mt-26 md:mt-36 mb-8 md:mb-26"
         />
         <Layout>
           <LayoutColumn start={1} end={{ base: 13, md: 8 }}>
             <h3 className="text-md mb-6 md:mb-16 md:text-2xl">
-              Modulated light, layered stitch, and measured rhythm.
+              {getTranslation(lang, 'inspirationModulatedLight')}
             </h3>
             <div className="md:text-md max-md:mb-16 max-w-135">
               <p>
-                Whether you&apos;re looking for bold statement pieces or subtle
-                elegance, this collection elevates your home with a touch of
-                glamour, sophistication, and unmatched coziness.
+                {getTranslation(lang, 'inspirationCollectionText')}
               </p>
             </div>
           </LayoutColumn>
@@ -143,16 +141,16 @@ export const InspirationPageClient: React.FC<InspirationPageClientProps> = ({ co
                 src="/images/content/urne-4.JPG"
                 width={768}
                 height={572}
-                alt="Studio view"
+                alt={getTranslation(lang, 'inspirationImageAlt7')}
                 className="mb-4 md:mb-6"
               />
               <div className="flex justify-between">
                 <div>
-                  <p className="mb-1">Studio</p>
-                  <p className="text-grayscale-500 text-xs">Process</p>
+                  <p className="mb-1">{getTranslation(lang, 'inspirationStudio')}</p>
+                  <p className="text-grayscale-500 text-xs">{getTranslation(lang, 'inspirationProcess')}</p>
                 </div>
                 <div>
-                  <p className="font-semibold">View</p>
+                  <p className="font-semibold">{getTranslation(lang, 'inspirationView')}</p>
                 </div>
               </div>
             </LocalizedLink>

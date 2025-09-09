@@ -50,7 +50,7 @@ export default async function InspirationPage({
   return (
     <>
       <InspirationPageClient countryCode={countryCode} />
-      <CollectionsSection className="mt-26 md:mt-36" />
+      <CollectionsSection className="mt-26 md:mt-36" countryCode={countryCode} />
     </>
   )
 }

@@ -88,6 +88,49 @@ export const translations = {
     registerAlreadyHaveAccount: "Already have an account? No worries, just",
     registerLogIn: "log in",
     registerImageAlt: "Handmade paper yarn urns",
+    
+    // Product types section
+    ourProducts: "Our products",
+    
+    // Collections section
+    collections: "Collections",
+    viewAll: "View All",
+    
+    // About page additional content
+    aboutImageAlt2: "Detail of paper yarn structure",
+    aboutImageAlt3: "Studio still of paper yarn urn",
+    aboutImageAlt4: "Grouped urns in natural light",
+    aboutMadeInGermany: "Made in Germany. Created with care, in conversation with you.",
+    aboutBespokeText: "You can request a bespoke piece or select from existing works. We accompany you with sensitivity and clarity on details and timelines.",
+    aboutInquiriesText: "For inquiries, please use the contact options in the footer.",
+    
+    // Inspiration page additional content
+    inspirationImageAlt2: "Urn detail",
+    inspirationImageAlt3: "Living room with brown armchair and gray corner sofa",
+    inspirationImageAlt4: "Urn silhouette",
+    inspirationImageAlt5: "Urn close-up",
+    inspirationImageAlt6: "Living room with gray two-seater puffy sofa",
+    inspirationImageAlt7: "Studio view",
+    inspirationStudioDetail: "Studio detail",
+    inspirationMaterialStudy: "Material study",
+    inspirationView: "View",
+    inspirationSilhouette: "Silhouette",
+    inspirationQuietForm: "Quiet form",
+    inspirationCloseUp: "Close-up",
+    inspirationPaperYarn: "Paper yarn",
+    inspirationStudio: "Studio",
+    inspirationProcess: "Process",
+    inspirationModulatedLight: "Modulated light, layered stitch, and measured rhythm.",
+    inspirationCollectionText: "Whether you're looking for bold statement pieces or subtle elegance, this collection elevates your home with a touch of glamour, sophistication, and unmatched coziness.",
+    
+    // Forgot password page
+    forgotPasswordTitle: "Forgot password",
+    forgotPasswordDescription: "Reset your password",
+    forgotPasswordImageAlt: "Gray backrest sofa and wooden coffee table",
+    
+    // Store page
+    storeTitle: "Store",
+    storeDescription: "Explore all of our products.",
   },
   de: {
     // Brand
@@ -178,6 +221,49 @@ export const translations = {
     registerAlreadyHaveAccount: "Bereits ein Konto? Kein Problem, einfach",
     registerLogIn: "anmelden",
     registerImageAlt: "Handgefertigte Papiergarn-Urnen",
+    
+    // Product types section
+    ourProducts: "Unsere Produkte",
+    
+    // Collections section
+    collections: "Kollektionen",
+    viewAll: "Alle anzeigen",
+    
+    // About page additional content
+    aboutImageAlt2: "Detail der Papiergarn-Struktur",
+    aboutImageAlt3: "Studio-Stillleben einer Papiergarn-Urne",
+    aboutImageAlt4: "Gruppierte Urnen im natürlichen Licht",
+    aboutMadeInGermany: "Made in Germany. Mit Sorgfalt geschaffen, im Gespräch mit Ihnen.",
+    aboutBespokeText: "Sie können eine maßgeschneiderte Arbeit anfordern oder aus bestehenden Werken wählen. Wir begleiten Sie mit Sensibilität und Klarheit bei Details und Zeitplänen.",
+    aboutInquiriesText: "Für Anfragen nutzen Sie bitte die Kontaktmöglichkeiten in der Fußzeile.",
+    
+    // Inspiration page additional content
+    inspirationImageAlt2: "Urnen-Detail",
+    inspirationImageAlt3: "Wohnzimmer mit braunem Sessel und grauer Ecksofa",
+    inspirationImageAlt4: "Urnen-Silhouette",
+    inspirationImageAlt5: "Urnen-Nahaufnahme",
+    inspirationImageAlt6: "Wohnzimmer mit grauem Zweisitzer-Puffsessel",
+    inspirationImageAlt7: "Studio-Ansicht",
+    inspirationStudioDetail: "Studio-Detail",
+    inspirationMaterialStudy: "Materialstudie",
+    inspirationView: "Anzeigen",
+    inspirationSilhouette: "Silhouette",
+    inspirationQuietForm: "Ruhige Form",
+    inspirationCloseUp: "Nahaufnahme",
+    inspirationPaperYarn: "Papiergarn",
+    inspirationStudio: "Studio",
+    inspirationProcess: "Prozess",
+    inspirationModulatedLight: "Moduliertes Licht, geschichtete Stiche und gemessener Rhythmus.",
+    inspirationCollectionText: "Ob Sie nach auffälligen Statement-Stücken oder subtiler Eleganz suchen, diese Kollektion veredelt Ihr Zuhause mit einem Hauch von Glamour, Raffinesse und unvergleichlicher Gemütlichkeit.",
+    
+    // Forgot password page
+    forgotPasswordTitle: "Passwort vergessen",
+    forgotPasswordDescription: "Passwort zurücksetzen",
+    forgotPasswordImageAlt: "Graues Rückenlehnen-Sofa und Holztisch",
+    
+    // Store page
+    storeTitle: "Shop",
+    storeDescription: "Entdecken Sie alle unsere Produkte.",
   }
 }
 

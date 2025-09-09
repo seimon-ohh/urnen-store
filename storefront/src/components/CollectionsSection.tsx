@@ -2,9 +2,11 @@ import Image from "next/image"
 import { getCollectionsList } from "@lib/data/collections"
 import { Carousel } from "@/components/Carousel"
 import { LocalizedButtonLink, LocalizedLink } from "@/components/LocalizedLink"
+import { getTranslation } from "@lib/translations"
 
-export const CollectionsSection: React.FC<{ className?: string }> = async ({
+export const CollectionsSection: React.FC<{ className?: string; countryCode: string }> = async ({
   className,
+  countryCode,
 }) => {
   const collections = await getCollectionsList(0, 20, [
     "id",
@@ -17,9 +19,11 @@ export const CollectionsSection: React.FC<{ className?: string }> = async ({
     return null
   }
 
+  const lang = countryCode || 'en'
+
   return (
     <Carousel
-      heading={<h3 className="text-md md:text-2xl">Collections</h3>}
+      heading={<h3 className="text-md md:text-2xl">{getTranslation(lang, 'collections')}</h3>}
       button={
         <>
           <LocalizedButtonLink
@@ -27,10 +31,10 @@ export const CollectionsSection: React.FC<{ className?: string }> = async ({
             size="md"
             className="h-full flex-1 max-md:hidden md:h-auto"
           >
-            View All
+            {getTranslation(lang, 'viewAll')}
           </LocalizedButtonLink>
           <LocalizedButtonLink href="/store" size="sm" className="md:hidden">
-            View All
+            {getTranslation(lang, 'viewAll')}
           </LocalizedButtonLink>
         </>
       }

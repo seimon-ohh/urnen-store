@@ -45,7 +45,7 @@ export const AboutPageClient: React.FC<AboutPageClientProps> = ({ countryCode })
               src="/images/content/DSCF3614.JPG"
               width={2496}
               height={1404}
-              alt="Detail of paper yarn structure"
+              alt={getTranslation(lang, 'aboutImageAlt2')}
               className="mt-26 lg:mt-36 mb-8 lg:mb-26"
             />
           </LayoutColumn>
@@ -66,7 +66,7 @@ export const AboutPageClient: React.FC<AboutPageClientProps> = ({ countryCode })
               src="/images/content/DSCF3617.JPG"
               width={1200}
               height={1600}
-              alt="Studio still of paper yarn urn"
+              alt={getTranslation(lang, 'aboutImageAlt3')}
               className="mb-16 lg:mb-46"
             />
           </LayoutColumn>
@@ -82,24 +82,22 @@ export const AboutPageClient: React.FC<AboutPageClientProps> = ({ countryCode })
           src="/images/content/DSCF3583.JPG"
           width={2880}
           height={1618}
-          alt="Grouped urns in natural light"
+          alt={getTranslation(lang, 'aboutImageAlt4')}
           className="mb-8 lg:mb-26"
         />
         <Layout>
           <LayoutColumn start={1} end={{ base: 13, lg: 7 }}>
             <h3 className="text-md max-lg:mb-6 md:text-2xl">
-              Made in Germany. Created with care, in conversation with you.
+              {getTranslation(lang, 'aboutMadeInGermany')}
             </h3>
           </LayoutColumn>
           <LayoutColumn start={{ base: 1, lg: 8 }} end={13}>
             <div className="md:text-md lg:mt-18">
               <p className="mb-5 lg:mb-9">
-                You can request a bespoke piece or select from existing works.
-                We accompany you with sensitivity and clarity on details and
-                timelines.
+                {getTranslation(lang, 'aboutBespokeText')}
               </p>
               <p>
-                For inquiries, please use the contact options in the footer.
+                {getTranslation(lang, 'aboutInquiriesText')}
               </p>
             </div>
           </LayoutColumn>

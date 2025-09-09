@@ -22,7 +22,7 @@ export async function generateMetadata({
   }
 }
 
-const ProductTypesSection: React.FC = async () => {
+const ProductTypesSection: React.FC<{ countryCode: string }> = async ({ countryCode }) => {
   const productTypes = await getProductTypesList(0, 20, [
     "id",
     "value",
@@ -33,10 +33,12 @@ const ProductTypesSection: React.FC = async () => {
     return null
   }
 
+  const lang = countryCode || 'en'
+
   return (
     <Layout className="mb-26 md:mb-36 max-md:gap-x-2">
       <LayoutColumn>
-        <h3 className="text-md md:text-2xl mb-8 md:mb-15">Our products</h3>
+        <h3 className="text-md md:text-2xl mb-8 md:mb-15">{getTranslation(lang, 'ourProducts')}</h3>
       </LayoutColumn>
       {productTypes.productTypes.map((productType, index) => (
         <LayoutColumn
@@ -80,8 +82,8 @@ export default async function Home({
   return (
     <>
       <HomePageClient countryCode={countryCode} />
-      <ProductTypesSection />
-      <CollectionsSection className="mb-22 md:mb-36" />
+      <ProductTypesSection countryCode={countryCode} />
+      <CollectionsSection className="mb-22 md:mb-36" countryCode={countryCode} />
     </>
   )
 }
