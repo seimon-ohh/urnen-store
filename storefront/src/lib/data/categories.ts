@@ -17,8 +17,6 @@ export const listCategories = async function () {
         created_at: new Date().toISOString(),
         updated_at: new Date().toISOString(),
         deleted_at: null,
-        is_internal: false,
-        is_active: true,
         rank: 0
       }
     ] as HttpTypes.StoreProductCategory[]
@@ -45,8 +43,6 @@ export const listCategories = async function () {
         created_at: new Date().toISOString(),
         updated_at: new Date().toISOString(),
         deleted_at: null,
-        is_internal: false,
-        is_active: true,
         rank: 0
       }
     ] as HttpTypes.StoreProductCategory[]
@@ -74,8 +70,6 @@ export const getCategoriesList = async function (
           created_at: new Date().toISOString(),
           updated_at: new Date().toISOString(),
           deleted_at: null,
-          is_internal: false,
-          is_active: true,
           rank: 0
         }
       ] as HttpTypes.StoreProductCategory[]
@@ -105,8 +99,6 @@ export const getCategoriesList = async function (
           created_at: new Date().toISOString(),
           updated_at: new Date().toISOString(),
           deleted_at: null,
-          is_internal: false,
-          is_active: true,
           rank: 0
         }
       ] as HttpTypes.StoreProductCategory[]
@@ -131,8 +123,6 @@ export const getCategoryByHandle = async function (categoryHandle: string[]) {
           created_at: new Date().toISOString(),
           updated_at: new Date().toISOString(),
           deleted_at: null,
-          is_internal: false,
-          is_active: true,
           rank: 0
         }
       ] as HttpTypes.StoreProductCategory[]
@@ -159,8 +149,6 @@ export const getCategoryByHandle = async function (categoryHandle: string[]) {
           created_at: new Date().toISOString(),
           updated_at: new Date().toISOString(),
           deleted_at: null,
-          is_internal: false,
-          is_active: true,
           rank: 0
         }
       ] as HttpTypes.StoreProductCategory[]
