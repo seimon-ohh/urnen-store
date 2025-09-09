@@ -3,6 +3,25 @@ import medusaError from "@lib/util/medusa-error"
 import { HttpTypes } from "@medusajs/types"
 
 export const listRegions = async function () {
+  // Check if we should use fallback data (build time or localhost backend)
+  const backendUrl = process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL || "http://localhost:9000"
+  const isLocalhost = backendUrl.includes("localhost") || backendUrl.includes("127.0.0.1")
+  const isVercelBuild = process.env.VERCEL === "1" && process.env.NODE_ENV === "production"
+  
+  if (isLocalhost || isVercelBuild) {
+    console.log("Using fallback regions data for build/localhost environment")
+    return [
+      {
+        id: "reg_01",
+        name: "Europe",
+        countries: [
+          { id: "ctr_01", iso_2: "de", iso_3: "deu", num_code: "276", name: "Germany", display_name: "Germany" },
+          { id: "ctr_02", iso_2: "gb", iso_3: "gbr", num_code: "826", name: "United Kingdom", display_name: "United Kingdom" }
+        ]
+      }
+    ] as HttpTypes.StoreRegion[]
+  }
+
   try {
     return await sdk.client
       .fetch<{ regions: HttpTypes.StoreRegion[] }>(`/store/regions`, {
@@ -12,9 +31,8 @@ export const listRegions = async function () {
       })
       .then(({ regions }) => regions)
   } catch (error) {
-    // During build time, the backend might not be available
-    // Return a fallback with common country codes
-    console.warn("Failed to fetch regions during build, using fallback:", error)
+    // Fallback in case of any other error
+    console.warn("Failed to fetch regions, using fallback:", error)
     return [
       {
         id: "reg_01",
