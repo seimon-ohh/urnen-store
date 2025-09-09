@@ -34,7 +34,6 @@ export const HomePageClient: React.FC<HomePageClientProps> = ({ countryCode }) =
           <LayoutColumn start={{ base: 1, md: 9 }} end={13}>
             <div className="flex items-center h-full">
               <div className="md:text-md">
-                <p>{getTranslation(lang, 'heroIntro')}</p>
                 <LocalizedLink href="/store" variant="underline">
                   {getTranslation(lang, 'aboutSectionCta')}
                 </LocalizedLink>
