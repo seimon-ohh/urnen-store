@@ -49,33 +49,24 @@ export const AboutPageClient: React.FC<AboutPageClientProps> = ({ countryCode })
               className="mt-26 lg:mt-36 mb-8 lg:mb-26"
             />
           </LayoutColumn>
-          <LayoutColumn start={1} end={{ base: 13, lg: 8 }}>
+          <LayoutColumn start={1} end={{ base: 13, lg: 6 }}>
             <h3 className="text-md lg:mb-10 mb-6 md:text-2xl">
               {getTranslation(lang, 'aboutText3')}
             </h3>
-          </LayoutColumn>
-          <LayoutColumn start={1} end={{ base: 13, lg: 6 }}>
             <div className="mb-16 lg:mb-26">
               <p className="mb-5 md:mb-9">
                 {getTranslation(lang, 'aboutText4')}
               </p>
             </div>
           </LayoutColumn>
-          <LayoutColumn start={{ base: 2, lg: 1 }} end={{ base: 12, lg: 7 }}>
+          <LayoutColumn start={{ base: 1, lg: 7 }} end={13}>
             <Image
               src="/images/content/DSCF3617.JPG"
               width={1200}
               height={1600}
               alt={getTranslation(lang, 'aboutImageAlt3')}
-              className="mb-16 lg:mb-46"
+              className="mb-16 lg:mb-46 w-full h-screen object-cover"
             />
-          </LayoutColumn>
-          <LayoutColumn start={{ base: 1, lg: 8 }} end={13}>
-            <div className="mb-6 lg:mb-20 xl:mb-36">
-              <p>
-                {getTranslation(lang, 'aboutText4')}
-              </p>
-            </div>
           </LayoutColumn>
         </Layout>
         <Image
