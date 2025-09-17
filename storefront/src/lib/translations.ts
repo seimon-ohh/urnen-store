@@ -121,7 +121,7 @@ export const translations = {
     heroHeadline: "Handgefertigte Urnen",
     heroSubheadline: "Einzigartige Papiergarn-Kreationen von Donata Oppermann",
     heroIntro: "Jede Urne wird sorgfältig handgefertigt mit traditionellen Techniken, die genähtes und verdralltes Papiergarn kombinieren, um bedeutungsvolle Gefäße für das Gedenken zu schaffen.",
-    heroIntroText: "Elegante Urnen aus natürlichem Papiergarn – würdevoll gefertigte Gefäße, die das Andenken in zeitloser Schönheit bewahren.",
+    heroIntroText: "Elegante Urnen aus natürlichem Papiergarn – würdevoll gefertigte Gefäße, die das Andenken in zeitloser Schönheit bewahren. Aus nachhaltigen Materialien und 100% biologisch abbaubar.",
     aboutSectionTitle: "Über die Künstlerin",
     aboutSectionText: "Die Künstlerin Donata Oppermann stellt einzigartige Urnen aus Papiergarn her. Sie verwendet traditionelle Handwerkstechniken.",
     aboutSectionCta: "Mehr erfahren",
