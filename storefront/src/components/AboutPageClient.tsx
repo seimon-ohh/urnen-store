@@ -16,9 +16,9 @@ export const AboutPageClient: React.FC<AboutPageClientProps> = ({ countryCode })
     <>
       <div className="max-md:pt-18">
         <Image
-          src="/images/content/2.jpg"
+          src="/images/content/DSCF3583.JPG"
           width={2880}
-          height={1500}
+          height={1618}
           alt={getTranslation(lang, 'aboutImageAlt')}
           className="md:h-screen md:object-cover"
         />
@@ -69,13 +69,6 @@ export const AboutPageClient: React.FC<AboutPageClientProps> = ({ countryCode })
             />
           </LayoutColumn>
         </Layout>
-        <Image
-          src="/images/content/DSCF3583.JPG"
-          width={2880}
-          height={1618}
-          alt={getTranslation(lang, 'aboutImageAlt4')}
-          className="mb-8 lg:mb-26"
-        />
         <Layout>
           <LayoutColumn start={1} end={{ base: 13, lg: 7 }}>
             <h3 className="text-md max-lg:mb-6 md:text-2xl">
