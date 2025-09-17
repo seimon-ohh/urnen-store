@@ -3,7 +3,7 @@
 import { useParams, usePathname } from "next/navigation"
 import { twMerge } from "tailwind-merge"
 import { Layout, LayoutColumn } from "@/components/Layout"
-import { NewsletterForm } from "@/components/NewsletterForm"
+import { ContactForm } from "@/components/ContactForm"
 import { LocalizedLink } from "@/components/LocalizedLink"
 import { getTranslation } from "@lib/translations"
 
@@ -94,7 +94,7 @@ export const Footer: React.FC = () => {
               </div>
             </div>
 
-            <NewsletterForm className="flex-1 max-lg:w-full lg:max-w-90 xl:max-w-96 max-lg:order-1 max-md:mb-16" />
+            <ContactForm className="flex-1 max-lg:w-full lg:max-w-90 xl:max-w-96 max-lg:order-1 max-md:mb-16" />
           </div>
         </LayoutColumn>
       </Layout>

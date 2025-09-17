@@ -44,14 +44,18 @@ export const translations = {
     cookiePolicy: "Cookie Policy",
     termsOfUse: "Terms of Use",
     
-    // Newsletter
-    newsletterTitle: "Join our newsletter",
-    newsletterThankYou: "Thank you for subscribing to our newsletter!",
-    newsletterDescription: "We will also send you our discount coupons!",
-    newsletterEmailPlaceholder: "Your email",
-    newsletterSubscribe: "Subscribe",
-    newsletterConsent: "By subscribing you agree to with our",
-    newsletterConsentEnd: "and provide consent to receive updates from our company.",
+    // Contact
+    contactTitle: "Get in Touch",
+    contactThankYou: "Thank you for your message! Your email client should open shortly.",
+    contactDescription: "Have a question about our urns or want to discuss a custom piece? We'd love to hear from you.",
+    contactNamePlaceholder: "Your name",
+    contactEmailPlaceholder: "Your email",
+    contactSubjectPlaceholder: "Subject",
+    contactMessagePlaceholder: "Your message",
+    contactSend: "Send Message",
+    contactSending: "Opening email...",
+    contactConsent: "By sending a message you agree to our",
+    contactConsentEnd: "and consent to us processing your personal data to respond to your inquiry.",
     
     // Login page
     loginTitle: "Login",
@@ -150,14 +154,18 @@ export const translations = {
     cookiePolicy: "Cookie-Richtlinie",
     termsOfUse: "Nutzungsbedingungen",
     
-    // Newsletter
-    newsletterTitle: "Newsletter abonnieren",
-    newsletterThankYou: "Vielen Dank für Ihr Newsletter-Abonnement!",
-    newsletterDescription: "Wir senden Ihnen auch unsere Rabattgutscheine!",
-    newsletterEmailPlaceholder: "Ihre E-Mail",
-    newsletterSubscribe: "Abonnieren",
-    newsletterConsent: "Durch das Abonnieren stimmen Sie unserer",
-    newsletterConsentEnd: "zu und geben Ihre Einwilligung, Updates von unserem Unternehmen zu erhalten.",
+    // Contact
+    contactTitle: "Kontakt aufnehmen",
+    contactThankYou: "Vielen Dank für Ihre Nachricht! Ihr E-Mail-Programm sollte sich gleich öffnen.",
+    contactDescription: "Haben Sie Fragen zu unseren Urnen oder möchten Sie über ein individuelles Stück sprechen? Wir freuen uns auf Ihre Nachricht.",
+    contactNamePlaceholder: "Ihr Name",
+    contactEmailPlaceholder: "Ihre E-Mail",
+    contactSubjectPlaceholder: "Betreff",
+    contactMessagePlaceholder: "Ihre Nachricht",
+    contactSend: "Nachricht senden",
+    contactSending: "E-Mail wird geöffnet...",
+    contactConsent: "Durch das Senden einer Nachricht stimmen Sie unserer",
+    contactConsentEnd: "zu und geben Ihre Einwilligung, dass wir Ihre personenbezogenen Daten zur Beantwortung Ihrer Anfrage verarbeiten.",
     
     // Login page
     loginTitle: "Anmelden",
