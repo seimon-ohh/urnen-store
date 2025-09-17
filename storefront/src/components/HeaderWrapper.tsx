@@ -17,6 +17,7 @@ export const HeaderWrapper: React.FC<{ children?: React.ReactNode }> = ({
     currentPath === "/" ||
     currentPath === "/about" ||
     currentPath.startsWith("/collections")
+  const isAboutPage = currentPath === "/about"
   const isAlwaysSticky =
     currentPath.startsWith("/auth") || currentPath.startsWith("/account")
 
@@ -59,6 +60,14 @@ export const HeaderWrapper: React.FC<{ children?: React.ReactNode }> = ({
         "data-sticky",
         position > triggerPosition ? "true" : "false"
       )
+
+      // Add blur effect for about page at top position
+      if (isAboutPage) {
+        headerElement.setAttribute(
+          "data-top-blur",
+          position < 50 ? "true" : "false"
+        )
+      }
     }
 
     updateTriggerPosition()
@@ -79,12 +88,12 @@ export const HeaderWrapper: React.FC<{ children?: React.ReactNode }> = ({
       window.removeEventListener("orientationchange", updateTriggerPosition)
       window.removeEventListener("scroll", handleScroll)
     }
-  }, [pathName, isPageWithHeroImage, isAlwaysSticky])
+  }, [pathName, isPageWithHeroImage, isAlwaysSticky, isAboutPage])
 
   return (
     <div
       id="site-header"
-      className="top-0 left-0 w-full max-md:bg-grayscale-50 data-[light=true]:md:text-black data-[sticky=true]:md:bg-white data-[sticky=true]:md:text-black transition-colors fixed z-40 group"
+      className="top-0 left-0 w-full max-md:bg-grayscale-50 data-[light=true]:md:text-black data-[sticky=true]:md:bg-white data-[sticky=true]:md:text-black data-[top-blur=true]:backdrop-blur-md data-[top-blur=true]:bg-white/80 data-[top-blur=true]:md:bg-white/80 transition-colors fixed z-40 group"
       data-light={isPageWithHeroImage}
       data-sticky={isAlwaysSticky}
     >
