@@ -64,12 +64,6 @@ export const HeaderDrawerClient: React.FC<{
                   {getTranslation(countryCode || 'en', 'about')}
                 </LocalizedLink>
                 <LocalizedLink
-                  href="/inspiration"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {getTranslation(countryCode || 'en', 'inspiration')}
-                </LocalizedLink>
-                <LocalizedLink
                   href="/store"
                   onClick={() => setIsMenuOpen(false)}
                 >

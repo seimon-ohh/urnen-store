@@ -6,7 +6,6 @@ export const translations = {
     
     // Navigation
     about: "About the Artist",
-    inspiration: "Inspiration", 
     shop: "Shop Urns",
     
     // Homepage
@@ -31,15 +30,6 @@ export const translations = {
     aboutText3: "Donata's work has been recognized for its unique approach to traditional materials and its ability to create meaningful objects that serve both aesthetic and practical purposes. Her urns are not just containers, but works of art that honor the memory of those who have passed.",
     aboutText4: "Based in Germany, Donata continues to create these special pieces, each one unique and made with care and attention to detail. Her work represents a bridge between traditional craftsmanship and contemporary artistic expression.",
     
-    // Inspiration page
-    inspirationTitle: "Inspiration",
-    inspirationDescription: "Details, light, and texture from paper yarn urns.",
-    inspirationImageAlt: "Paper yarn forms in natural light",
-    inspirationHeadline: "Inspiration",
-    inspirationText1: "The beauty of Donata's work lies in the intricate details, the play of light on textured surfaces, and the organic forms that emerge from the careful manipulation of paper yarn.",
-    inspirationText2: "Each piece tells a story through its texture, its form, and the way it interacts with light. The sewing and drilling techniques create patterns and depth that are both visually striking and emotionally resonant.",
-    inspirationText3: "These urns are designed to be not just functional objects, but meaningful works of art that honor the memory of loved ones while bringing beauty and comfort to those who remain.",
-    inspirationCta: "Shop Urns",
     
     // Footer
     faq: "FAQ",
@@ -105,24 +95,6 @@ export const translations = {
     aboutBespokeText: "You can request a bespoke piece or select from existing works. We accompany you with sensitivity and clarity on details and timelines.",
     aboutInquiriesText: "For inquiries, please use the contact options in the footer.",
     
-    // Inspiration page additional content
-    inspirationImageAlt2: "Urn detail",
-    inspirationImageAlt3: "Living room with brown armchair and gray corner sofa",
-    inspirationImageAlt4: "Urn silhouette",
-    inspirationImageAlt5: "Urn close-up",
-    inspirationImageAlt6: "Living room with gray two-seater puffy sofa",
-    inspirationImageAlt7: "Studio view",
-    inspirationStudioDetail: "Studio detail",
-    inspirationMaterialStudy: "Material study",
-    inspirationView: "View",
-    inspirationSilhouette: "Silhouette",
-    inspirationQuietForm: "Quiet form",
-    inspirationCloseUp: "Close-up",
-    inspirationPaperYarn: "Paper yarn",
-    inspirationStudio: "Studio",
-    inspirationProcess: "Process",
-    inspirationModulatedLight: "Modulated light, layered stitch, and measured rhythm.",
-    inspirationCollectionText: "Whether you're looking for bold statement pieces or subtle elegance, this collection elevates your home with a touch of glamour, sophistication, and unmatched coziness.",
     
     // Forgot password page
     forgotPasswordTitle: "Forgot password",
@@ -140,7 +112,6 @@ export const translations = {
     
     // Navigation
     about: "Über die Künstlerin",
-    inspiration: "Inspiration",
     shop: "Urnen kaufen",
     
     // Homepage
@@ -165,15 +136,6 @@ export const translations = {
     aboutText3: "Ihre Urnen sind nicht nur Behälter, sondern Kunstwerke, die das Andenken an Verstorbene ehren.",
     aboutText4: "Ihre Arbeit stellt eine Brücke zwischen traditionellem Handwerk und zeitgenössischem künstlerischem Ausdruck dar.",
     
-    // Inspiration page
-    inspirationTitle: "Inspiration",
-    inspirationDescription: "Details, Licht und Textur von Papiergarn-Urnen.",
-    inspirationImageAlt: "Papiergarn-Formen im natürlichen Licht",
-    inspirationHeadline: "Inspiration",
-    inspirationText1: "Die Schönheit von Donatas Arbeit liegt in den komplexen Details, dem Spiel des Lichts auf strukturierten Oberflächen und den organischen Formen, die aus der sorgfältigen Manipulation von Papiergarn entstehen.",
-    inspirationText2: "Jedes Stück erzählt eine Geschichte durch seine Textur, seine Form und die Art, wie es mit Licht interagiert. Die Näh- und Verdralltechniken schaffen Muster und Tiefe, die sowohl visuell beeindruckend als auch emotional resonant sind.",
-    inspirationText3: "Diese Urnen sind darauf ausgelegt, nicht nur funktionale Objekte zu sein, sondern bedeutungsvolle Kunstwerke, die das Andenken an geliebte Menschen ehren und gleichzeitig Schönheit und Trost für die Hinterbliebenen bringen.",
-    inspirationCta: "Urnen kaufen",
     
     // Footer
     faq: "FAQ",
@@ -239,24 +201,6 @@ export const translations = {
     aboutBespokeText: "Sie können eine maßgeschneiderte Arbeit anfordern oder aus bestehenden Werken wählen. Wir begleiten Sie mit Sensibilität und Klarheit bei Details und Zeitplänen.",
     aboutInquiriesText: "Für Anfragen nutzen Sie bitte die Kontaktmöglichkeiten in der Fußzeile.",
     
-    // Inspiration page additional content
-    inspirationImageAlt2: "Urnen-Detail",
-    inspirationImageAlt3: "Wohnzimmer mit braunem Sessel und grauer Ecksofa",
-    inspirationImageAlt4: "Urnen-Silhouette",
-    inspirationImageAlt5: "Urnen-Nahaufnahme",
-    inspirationImageAlt6: "Wohnzimmer mit grauem Zweisitzer-Puffsessel",
-    inspirationImageAlt7: "Studio-Ansicht",
-    inspirationStudioDetail: "Studio-Detail",
-    inspirationMaterialStudy: "Materialstudie",
-    inspirationView: "Anzeigen",
-    inspirationSilhouette: "Silhouette",
-    inspirationQuietForm: "Ruhige Form",
-    inspirationCloseUp: "Nahaufnahme",
-    inspirationPaperYarn: "Papiergarn",
-    inspirationStudio: "Studio",
-    inspirationProcess: "Prozess",
-    inspirationModulatedLight: "Moduliertes Licht, geschichtete Stiche und gemessener Rhythmus.",
-    inspirationCollectionText: "Ob Sie nach auffälligen Statement-Stücken oder subtiler Eleganz suchen, diese Kollektion veredelt Ihr Zuhause mit einem Hauch von Glamour, Raffinesse und unvergleichlicher Gemütlichkeit.",
     
     // Forgot password page
     forgotPasswordTitle: "Passwort vergessen",

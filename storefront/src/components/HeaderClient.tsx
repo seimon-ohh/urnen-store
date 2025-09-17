@@ -23,7 +23,6 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ countryOptions }) =>
       </h1>
       <div className="flex items-center gap-8 max-md:hidden">
         <LocalizedLink href="/about">{getTranslation(countryCode || 'en', 'about')}</LocalizedLink>
-        <LocalizedLink href="/inspiration">{getTranslation(countryCode || 'en', 'inspiration')}</LocalizedLink>
         <LocalizedLink href="/store">{getTranslation(countryCode || 'en', 'shop')}</LocalizedLink>
       </div>
     </>
