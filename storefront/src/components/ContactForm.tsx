@@ -48,21 +48,21 @@ export const ContactForm: React.FC<{ className?: string }> = ({
 
   return (
     <div className={className}>
-      <h2 className="text-md md:text-lg mb-2 md:mb-1">{getTranslation(lang, 'contactTitle')}</h2>
+      <h2 className="text-sm md:text-md mb-1">{getTranslation(lang, 'contactTitle')}</h2>
       {isSubmitted ? (
-        <p className="max-md:text-xs">
+        <p className="text-xs">
           {getTranslation(lang, 'contactThankYou')}
         </p>
       ) : (
         <>
-          <p className="max-md:text-xs mb-4">
+          <p className="text-xs mb-3">
             {getTranslation(lang, 'contactDescription')}
           </p>
           <Form
             onSubmit={handleSubmit}
             schema={contactFormSchema}
           >
-            <div className="space-y-4">
+            <div className="space-y-2">
               <div className="flex gap-2">
                 <InputField
                   inputProps={{
@@ -101,19 +101,19 @@ export const ContactForm: React.FC<{ className?: string }> = ({
                 name="message"
                 placeholder={getTranslation(lang, 'contactMessagePlaceholder')}
                 className="w-full px-3 py-2 text-sm border border-gray-300 rounded-xs resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                rows={4}
+                rows={2}
               />
               <Button 
                 type="submit" 
                 size="sm" 
-                className="w-full h-9 text-xs"
+                className="w-full h-8 text-xs"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? getTranslation(lang, 'contactSending') : getTranslation(lang, 'contactSend')}
               </Button>
             </div>
           </Form>
-          <p className="text-xs text-grayscale-500 mt-2">
+          <p className="text-xs text-grayscale-500 mt-1">
             {getTranslation(lang, 'contactConsent')}{" "}
             <LocalizedLink
               href="/privacy-policy"
