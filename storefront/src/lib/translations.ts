@@ -160,10 +160,10 @@ export const translations = {
     aboutDescription: "Erfahren Sie mehr über die deutsche Künstlerin, die handgefertigte Papiergarn-Urnen herstellt.",
     aboutImageAlt: "Handgefertigte Urnen aus Papiergarn",
     aboutHeadline: "Über Donata Oppermann",
-    aboutText1: "Donata Oppermann ist eine Künstlerin, die hauptsächlich mit Papier arbeitet. Neben ihren großen raumgreifenden Objekten stellt sie auch einzigartige Urnen aus Papiergarn her. Jede Urne wird sorgfältig handgefertigt.",
-    aboutText2: "Die feinen, farblichen Texturen entnimmt sie der Natur.",
-    aboutText3: "Donatas Arbeit wurde für ihren einzigartigen Ansatz zu traditionellen Materialien und ihre Fähigkeit, bedeutungsvolle Objekte zu schaffen, die sowohl ästhetischen als auch praktischen Zwecken dienen, anerkannt. Ihre Urnen sind nicht nur Behälter, sondern Kunstwerke, die das Andenken an Verstorbene ehren.",
-    aboutText4: "Mit Sitz in Deutschland schafft Donata weiterhin diese besonderen Stücke, jedes einzigartig und mit Sorgfalt und Aufmerksamkeit für Details hergestellt. Ihre Arbeit stellt eine Brücke zwischen traditionellem Handwerk und zeitgenössischem künstlerischem Ausdruck dar.",
+    aboutText1: "Donata Oppermann ist eine Künstlerin, die hauptsächlich mit Papier arbeitet. Neben ihren großen raumgreifenden Objekten stellt sie auch einzigartige Urnen aus Papiergarn her.",
+    aboutText2: "Jede Urne wird sorgfältig handgefertigt. Die feinen, farblichen Texturen entnimmt sie der Natur.",
+    aboutText3: "Ihre Urnen sind nicht nur Behälter, sondern Kunstwerke, die das Andenken an Verstorbene ehren.",
+    aboutText4: "Ihre Arbeit stellt eine Brücke zwischen traditionellem Handwerk und zeitgenössischem künstlerischem Ausdruck dar.",
     
     // Inspiration page
     inspirationTitle: "Inspiration",
